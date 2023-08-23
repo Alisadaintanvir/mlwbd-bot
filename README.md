@@ -12,9 +12,10 @@ This repository contains a Python script that automates the process of downloadi
 ## Instructions:
 
 1. Install Selenium library:
+
    `pip install selenium`
 
-2. Download and install the appropriate ChromeDriver version:
+3. Download and install the appropriate ChromeDriver version:
 - Visit the ChromeDriver download page and download the version compatible with your Chrome browser.
 - 
 3. Place the downloaded ChromeDriver executable in the same directory as the script.
@@ -23,7 +24,8 @@ This repository contains a Python script that automates the process of downloadi
 
 - Open a terminal and navigate to the directory containing the script.
 - Run the script using the command:
-  `python automated_movie_download.py`
+
+   `python main.py`
 
 5. Enter the movie link from MLWBD when prompted.
 
