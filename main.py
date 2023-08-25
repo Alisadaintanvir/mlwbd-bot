@@ -1,14 +1,30 @@
 import time
+import os
+from telebot import TeleBot
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+load_dotenv()
+
+bot = TeleBot(token=os.environ.get("BOT_TOKEN"))
+
+
+def start(message):
+    bot.send_message(message.chat.id, "Please enter the movie link from MLWBD:")
+
+
 url = input("Please enter the movie link from MLWBD: ")
+
+# Get the movie title from url
 title = url.split("/")[-2]
+
 print("It may take 60 seconds or more based on your internet speed.")
 
+# Hide chrome and work in background
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
@@ -46,7 +62,7 @@ download_btn4 = WebDriverWait(driver, 20).until(
 )
 download_btn4.click()
 
-download_btn5 = WebDriverWait(driver, 10).until(
+download_btn5 = WebDriverWait(driver, 15).until(
     EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div/div/div/article/div[2]/div[3]/form/input[2]"))
 )
 download_btn5.click()
