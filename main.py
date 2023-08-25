@@ -34,7 +34,6 @@ def download_movie(message):
 
     wait_message = bot.send_message(chat_id, "Please wait while we process your request...")
 
-    # ... rest of your code ...
     print("It may take 60 seconds or more based on your internet speed.")
 
     # Hide chrome and work in background
